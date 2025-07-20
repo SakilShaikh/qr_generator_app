@@ -3,17 +3,19 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>QR Code Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp QR Code Generator</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <div class="container">
-        <h1>QR Code Generator</h1>
-        <input type="text" id="qrText" placeholder="Enter text or URL" />
+        <h1>WhatsApp QR Code Generator</h1>
+        <input type="text" id="phone" placeholder="Enter phone number (with country code)" />
+        <input type="text" id="message" placeholder="Enter optional message" />
         <button onclick="generateQR()">Generate QR</button>
         <div id="qrcode"></div>
-        <a id="downloadLink" download="qrcode.png" style="display:none;">Download QR Code</a>
+        <a id="downloadLink" download="whatsapp-qr.png" style="display:none;">Download QR Code</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
