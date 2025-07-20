@@ -13,6 +13,10 @@
         <h1>WhatsApp QR Code Generator</h1>
         <input type="text" id="phone" placeholder="Enter phone number (with country code)" />
         <input type="text" id="message" placeholder="Enter optional message" />
+        <div class="color-picker-container">
+            <label for="colorPicker">QR Code Color:</label>
+            <input type="color" id="colorPicker" value="#000000">
+        </div>
         <button onclick="generateQR()">Generate QR</button>
         <div id="qrcode"></div>
         <a id="downloadLink" download="whatsapp-qr.png" style="display:none;">Download QR Code</a>

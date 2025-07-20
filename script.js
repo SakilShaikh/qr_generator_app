@@ -3,6 +3,7 @@ function generateQR() {
   const message = encodeURIComponent(document.getElementById('message').value.trim());
   const qrContainer = document.getElementById('qrcode');
   const downloadLink = document.getElementById('downloadLink');
+  const color = document.getElementById('colorPicker').value;
 
   if (!phone) return alert("Please enter a phone number.");
 
@@ -15,7 +16,7 @@ function generateQR() {
 
   logo.onload = function() {
     // Logo loaded, now create QR code and draw logo
-    QRCode.toCanvas(waLink, { width: 256, color: { dark: "#000000", light: "#ffffff" } }, function (err, canvas) {
+    QRCode.toCanvas(waLink, { width: 256, color: { dark: color, light: "#0000" }, margin: 0 }, function (err, canvas) {
       if (err) {
         console.error(err);
         return;
@@ -35,7 +36,7 @@ function generateQR() {
   logo.onerror = function() {
     // Logo failed, create QR code without it
     console.error("Logo failed to load.");
-    QRCode.toCanvas(waLink, { width: 256, color: { dark: "#000000", light: "#ffffff" } }, function (err, canvas) {
+    QRCode.toCanvas(waLink, { width: 256, color: { dark: color, light: "#0000" }, margin: 0 }, function (err, canvas) {
         if (err) {
             console.error(err);
             return;
